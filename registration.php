@@ -5,4 +5,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Maddlen_ZermattTheme', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Maddlen_Nivo', __DIR__);
