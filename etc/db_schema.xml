@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="maddlen_nivo_otp" resource="default" engine="innodb" comment="OTP Table">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="OTP ID"/>
+        <column xsi:type="varchar" name="email" nullable="true" length="128" comment="User Email"/>
+        <column xsi:type="varchar" name="hash" nullable="false" length="255" comment="Hash"/>
+        <column xsi:type="int" name="count" unsigned="true" nullable="false" default="0"
+                comment="Count"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="OTP Created Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="OTP_EMAIL">
+            <column name="email"/>
+        </constraint>
+    </table>
+</schema>

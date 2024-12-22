@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="maddlen_nivo_clean_expired_otp" xsi:type="object">Maddlen\Nivo\Console\Command\CleanExpiredOtp</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Validator">
+        <plugin name="maddlen_nivo_bypass_customer_validation" type="Maddlen\Nivo\Plugin\Framework\ValidatorPlugin"/>
+    </type>
+</config>

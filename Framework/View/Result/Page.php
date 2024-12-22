@@ -13,27 +13,21 @@ use Magento\Framework\View;
 
 class Page extends View\Result\Page
 {
+    protected $viewVars = [];
     protected $noRouteTemplate = 'Maddlen_Nivo::routes/no_route.phtml';
 
     protected function render(HttpResponseInterface $response)
     {
         $this->pageConfig->publicBuild();
-        if ($this->getPageLayout()) {
-            $layout = $this->layoutFactory->create();
-            $output = $layout->getOutput();
-            $this->assign('layoutContent', $output);
-            $this->template = sprintf('Maddlen_Nivo::routes/%s.phtml', $this->getDefaultLayoutHandle());
-            try {
-                $output = $this->renderPage();
-            } catch (Exception $e) {
-                $this->template = $this->noRouteTemplate;
-                $output = $this->renderPage();
-            }
-            $this->translateInline->processResponseBody($output);
-            $response->appendBody($output);
-        } else {
-            parent::render($response);
+        $this->template = sprintf('Maddlen_Nivo::routes/%s.phtml', $this->getDefaultLayoutHandle());
+        try {
+            $output = $this->renderPage();
+        } catch (Exception $e) {
+            $this->template = $this->noRouteTemplate;
+            $output = $this->renderPage();
         }
+        $this->translateInline->processResponseBody($output);
+        $response->appendBody($output);
         return $this;
     }
 

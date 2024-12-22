@@ -1,4 +1,17 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Framework\View\Result\Page" type="Maddlen\Nivo\Framework\View\Result\Page"/>
+    <type name="Magento\Framework\Controller\ResultFactory">
+        <arguments>
+            <argument name="typeMap" xsi:type="array">
+                <item name="nivo_page" xsi:type="array">
+                    <item name="type" xsi:type="const">Magento\Framework\Controller\ResultFactory::TYPE_PAGE</item>
+                    <item name="class" xsi:type="string">Maddlen\Nivo\Framework\View\Result\Page</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Customer\Controller\Account\Login">
+        <plugin name="nivo_customer_login_plugin" type="Maddlen\Nivo\Plugin\Customer\Controller\Account\LoginPlugin"/>
+    </type>
 </config>

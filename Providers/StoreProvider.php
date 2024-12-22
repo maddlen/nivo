@@ -6,14 +6,13 @@
 namespace Maddlen\Nivo\Providers;
 
 use Maddlen\Zermatt\App\App;
-use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Framework\View\Page\Config;
 
-class StoreProvider implements ArgumentInterface
+class StoreProvider implements ContainerProviderInterface
 {
     public function __construct(
         protected Config $pageConfig,
-        protected App $app
+        protected App    $app
     )
     {
     }
@@ -22,6 +21,7 @@ class StoreProvider implements ArgumentInterface
     {
         return $this->app;
     }
+
     public function lang(): string
     {
         return $this->pageConfig->getElementAttribute(Config::ELEMENT_TYPE_HTML, Config::HTML_ATTRIBUTE_LANG);
