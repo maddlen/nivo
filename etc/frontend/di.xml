@@ -14,4 +14,7 @@
     <type name="Magento\Customer\Controller\Account\Login">
         <plugin name="nivo_customer_login_plugin" type="Maddlen\Nivo\Plugin\Customer\Controller\Account\LoginPlugin"/>
     </type>
+    <type name="Magento\Framework\Controller\ResultInterface">
+        <plugin name="nivo_response_result_plugin" type="Maddlen\Nivo\Plugin\Framework\Controller\ResultInterfacePlugin"/>
+    </type>
 </config>
