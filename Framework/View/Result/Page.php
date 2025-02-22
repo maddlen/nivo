@@ -10,8 +10,9 @@ use Maddlen\Zermatt\Partial\Render;
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\Response\HttpInterface as HttpResponseInterface;
 use Magento\Framework\View;
+use Magento\Framework\View\Result\Page as MagePage;
 
-class Page extends View\Result\Page
+class Page extends MagePage
 {
     protected $viewVars = [];
     protected $noRouteTemplate = 'Maddlen_Nivo::routes/no_route.phtml';

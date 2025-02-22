@@ -5,7 +5,9 @@
 
 namespace Maddlen\Nivo\Providers;
 
-interface ContainerProviderInterface extends \Magento\Framework\View\Element\Block\ArgumentInterface
+use Magento\Framework\View\Element\Block\ArgumentInterface;
+
+interface ContainerProviderInterface extends ArgumentInterface
 {
 
 }
