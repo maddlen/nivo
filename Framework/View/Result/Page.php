@@ -9,7 +9,7 @@ use Exception;
 use Maddlen\Zermatt\Partial\Render;
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\Response\HttpInterface as HttpResponseInterface;
-use Magento\Framework\View;
+use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Result\Page as MagePage;
 
 class Page extends MagePage
@@ -22,6 +22,7 @@ class Page extends MagePage
         $this->pageConfig->publicBuild();
         $this->template = sprintf('Maddlen_Nivo::routes/%s.phtml', $this->getDefaultLayoutHandle());
         try {
+            $this->assign('block', $this->layout->createBlock(Template::class));
             $output = $this->renderPage();
         } catch (Exception $e) {
             $this->template = $this->noRouteTemplate;

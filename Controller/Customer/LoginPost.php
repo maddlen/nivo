@@ -7,7 +7,6 @@ use Maddlen\Nivo\Services\Otp as OtpService;
 use Maddlen\ZermattForm\FormRules\FormRulesActionInterface;
 use Maddlen\ZermattForm\FormRules\FormRulesService;
 use Magento\Framework\App\RequestInterface;
-use Magento\Framework\Message\Manager;
 use Magento\Framework\Phrase;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\Validator\EmailAddress;
@@ -24,7 +23,6 @@ class LoginPost implements FormRulesActionInterface
         private readonly UrlInterface     $url,
         private readonly OtpService       $otpService,
         private readonly LoggerInterface  $logger,
-        private readonly Manager          $manager
     )
     {
     }

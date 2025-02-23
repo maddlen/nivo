@@ -16,11 +16,11 @@ readonly class Otp
 {
 
     public function __construct(
-        private readonly EncryptorInterface $encryptor,
-        private readonly OtpFactory         $otpFactory,
-        private readonly OtpResource        $otpResource,
-        private readonly CollectionFactory  $otpCollectionFactory,
-        private readonly EmailSender        $emailSender,
+        private EncryptorInterface $encryptor,
+        private OtpFactory         $otpFactory,
+        private OtpResource        $otpResource,
+        private CollectionFactory  $otpCollectionFactory,
+        private EmailSender        $emailSender,
     )
     {
     }
