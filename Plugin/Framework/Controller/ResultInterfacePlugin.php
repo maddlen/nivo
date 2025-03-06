@@ -25,7 +25,7 @@ class ResultInterfacePlugin
      */
     public function beforeRenderResult(ResultInterface $subject, ResponseInterface $response): array
     {
-        if ($subject instanceof Page) {
+        if ($subject instanceof Page && $subject->getDefaultLayoutHandle() === 'cms_index_index') {
             $pageId = $this->scopeConfig->getValue(\Magento\Cms\Helper\Page::XML_PATH_HOME_PAGE, ScopeInterface::SCOPE_STORE);
             $this->request->setParam('page_id', $pageId);
         }

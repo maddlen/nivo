@@ -1,21 +1,22 @@
 {
-  "name": "maddlen/module-nivo",
-  "version": "1.0.0",
-  "description": "N/A",
-  "type": "magento2-module",
-  "require": {
-    "magento/framework": "*",
-    "maddlen/module-zermatt": "1.2.*"
-  },
-  "license": [
-    "Massachusetts Institute of Technology License (MITL)"
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "maddlen/module-nivo",
+    "version": "1.0.0",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "intervention/image": "^3.11",
+        "magento/framework": "*",
+        "maddlen/module-zermatt": "1.2.*"
+    },
+    "license": [
+        "Massachusetts Institute of Technology License (MITL)"
     ],
-    "psr-4": {
-      "Maddlen\\ZermattTheme\\": ""
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Maddlen\\ZermattTheme\\": ""
+        }
     }
-  }
 }
